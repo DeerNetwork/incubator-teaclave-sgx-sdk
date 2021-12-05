@@ -275,6 +275,9 @@ pub use self::thread::{
     rsgx_thread_equal
 };
 
+#[cfg(debug_assertions)]
+pub mod debug;
+
 // Re-export macros defined in libcore.
 #[allow(deprecated, deprecated_in_future)]
 pub use core::{

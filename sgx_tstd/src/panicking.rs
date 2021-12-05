@@ -403,7 +403,6 @@ pub fn panicking() -> bool {
 // otherwise avoid inlining because of it is cold path.
 #[track_caller]
 #[inline(never)]
-#[lang = "begin_panic_fmt"]
 pub fn begin_panic_fmt(msg: &fmt::Arguments<'_>) -> ! {
     let info = PanicInfo::internal_constructor(Some(msg), Location::caller());
     begin_panic_handler(&info)
